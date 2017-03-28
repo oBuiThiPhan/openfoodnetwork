@@ -67,7 +67,7 @@ angular.module("admin.variantOverrides").controller "AdminVariantOverridesCtrl",
         DirtyVariantOverrides.clear()
         VariantOverrides.updateIds updatedVos
         $scope.variant_overrides_form.$setPristine()
-        StatusMessage.display 'success', 'Changes saved.'
+        StatusMessage.display 'success', 'Thay đổi đã lưu.'
         VariantOverrides.updateData updatedVos # Refresh page data
       .error (data, status) ->
         StatusMessage.display 'failure', $scope.updateError(data, status)
@@ -75,32 +75,32 @@ angular.module("admin.variantOverrides").controller "AdminVariantOverridesCtrl",
 
   $scope.updateError = (data, status) ->
     if status == 401
-      "I couldn't get authorisation to save those changes, so they remain unsaved."
+      "Tôi không thể có được ủy quyền để lưu các thay đổi đó, do đó, chúng vẫn chưa được lưu."
 
     else if status == 400 && data.errors?
       errors = []
       for field, field_errors of data.errors
         errors = errors.concat field_errors
       errors = errors.join ', '
-      "I had some trouble saving: #{errors}"
+      "Có một số vấn đề về việc lưu lại: #{errors}"
     else
-      "Oh no! I was unable to save your changes."
+      "Ồ không! Thay đổi của bạn không thể lưu."
 
   $scope.resetStock = ->
     if DirtyVariantOverrides.count() > 0
-      StatusMessage.display 'alert', 'Save changes first.'
+      StatusMessage.display 'alert', 'Lưu thay đổi trước tiên.'
       $timeout ->
         $scope.displayDirty()
       , 3000 # 3 second delay
     else
       return unless $scope.hub_id?
-      StatusMessage.display 'progress', 'Changing on hand stock levels...'
+      StatusMessage.display 'progress', 'Đang thay đổi kho...'
       $http
         method: "POST"
         url: "/admin/variant_overrides/bulk_reset"
         data: { hub_id: $scope.hub_id }
       .success (updatedVos) ->
         VariantOverrides.updateData updatedVos
-        StatusMessage.display 'success', 'Stocks reset to defaults.'
+        StatusMessage.display 'success', 'Kho đã được đặt lại về mặc định.'
       .error (data, status) ->
         $timeout -> StatusMessage.display 'failure', $scope.updateError(data, status)

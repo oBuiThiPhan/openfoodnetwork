@@ -1,4 +1,4 @@
-# Contributing
+<!-- # Contributing
 
 We love pull requests from everyone. Here are some instructions for
 contributing code to Open Food Network. See the [developer wiki](https://github.com/openfoodfoundation/openfoodnetwork/wiki) for more information.
@@ -31,3 +31,4 @@ To increase the chance that your pull request is swiftly accepted:
 * Before submitting, [rebase your work][rebase] on the current master branch
 
 [rebase]: https://www.atlassian.com/git/tutorials/merging-vs-rebasing/workflow-walkthrough
+ -->

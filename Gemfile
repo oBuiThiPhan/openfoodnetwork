@@ -8,7 +8,7 @@ gem 'i18n', '~> 0.6.11'
 # Patched version. See http://rubysec.com/advisories/CVE-2015-5312/.
 gem 'nokogiri', '>= 1.6.7.1'
 
-gem 'pg'
+gem "mysql2", '~> 0.3.10'
 gem 'spree', github: 'openfoodfoundation/spree', branch: 'spree-upgrade-step1c'
 gem 'spree_i18n', github: 'spree/spree_i18n', branch: '1-3-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '1-3-stable'
@@ -63,7 +63,6 @@ gem 'wkhtmltopdf-binary'
 
 gem 'foreigner'
 gem 'immigrant'
-gem 'roo', '~> 2.7.0'
 
 gem 'whenever', require: false
 
@@ -91,7 +90,6 @@ gem 'jquery-rails'
 gem 'jquery-migrate-rails'
 gem 'css_splitter'
 
-gem 'ofn-qz', github: 'openfoodfoundation/ofn-qz'
 
 group :test, :development do
   # Pretty printed test output

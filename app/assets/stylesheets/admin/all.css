@@ -15,3 +15,50 @@
  *= require_self
  *= require_tree .
 */
+
+.container {
+  width: 1000px;
+}
+.container .sixteen.columns {
+  width: 980px;
+}
+
+.container .seven.columns {
+  width: 410px;
+}
+
+.container .thirteen.columns {
+  width: 800px;
+}
+
+.container .eight.columns {
+  width: 480px;
+}
+
+.container .one.column, .container .one.columns {
+  width: 50px;
+}
+
+.container .four.columns {
+  width: 230px;
+}
+
+.container .twelve.columns {
+  width: 720px;
+}
+
+.container .two.columns {
+  width: 120px;
+}
+
+li.tab-with-icon {
+  span{
+    font-size: 12px;
+  }
+}
+
+.side_menu a.menu_item {
+  span {
+    font-size: 15px;
+  }
+}

@@ -10,76 +10,68 @@ namespace :openfoodnetwork do
       task_name = "openfoodnetwork:dev:load_sample_data"
 
       # -- Shipping / payment information
-      unless Spree::Zone.find_by_name 'Australia'
+      unless Spree::Zone.find_by_name 'Viet Nam'
         puts "[#{task_name}] Seeding shipping / payment information"
-        zone = FactoryGirl.create(:zone, :name => 'Australia', :zone_members => [])
-        country = Spree::Country.find_by_name('Australia')
+        zone = FactoryGirl.create(:zone, :name => 'Viet Nam', :zone_members => [])
+        country = Spree::Country.find_by_name('Viet Nam')
         Spree::ZoneMember.create(:zone => zone, :zoneable => country)
         FactoryGirl.create(:shipping_method, :zone => zone)
       end
 
       # -- Taxonomies
-      unless Spree::Taxonomy.find_by_name 'Products'
+      unless Spree::Taxonomy.find_by_name 'Sản phẩm'
         puts "[#{task_name}] Seeding taxonomies"
-        taxonomy = Spree::Taxonomy.find_by_name('Products') || FactoryGirl.create(:taxonomy, :name => 'Products')
+        taxonomy = Spree::Taxonomy.find_by_name('Sản phẩm') || FactoryGirl.create(:taxonomy, :name => 'Sản phẩm')
         taxonomy_root = taxonomy.root
 
-        ['Vegetables', 'Fruit', 'Oils', 'Preserves and Sauces', 'Dairy', 'Meat and Fish'].each do |taxon_name|
+        ['Rau củ', 'Hoa quả', 'Mứt và gia vị', 'Bơ và sữa', 'Thịt và cá'].each do |taxon_name|
           FactoryGirl.create(:taxon, :name => taxon_name, :parent_id => taxonomy_root.id)
         end
       end
 
       # -- Addresses
-      unless Spree::Address.find_by_zipcode "3160"
+      unless Spree::Address.find_by_zipcode "426673"
         puts "[#{task_name}] Seeding addresses"
 
-        FactoryGirl.create(:address, :address1 => "25 Myrtle Street", :zipcode => "3153", :city => "Bayswater")
-        FactoryGirl.create(:address, :address1 => "6 Rollings Road", :zipcode => "3156", :city => "Upper Ferntree Gully")
-        FactoryGirl.create(:address, :address1 => "72 Lake Road", :zipcode => "3130", :city => "Blackburn")
-        FactoryGirl.create(:address, :address1 => "7 Verbena Street", :zipcode => "3195", :city => "Mordialloc")
-        FactoryGirl.create(:address, :address1 => "20 Galvin Street", :zipcode => "3018", :city => "Altona")
-        FactoryGirl.create(:address, :address1 => "59 Websters Road", :zipcode => "3106", :city => "Templestowe")
-        FactoryGirl.create(:address, :address1 => "17 Torresdale Drive", :zipcode => "3155", :city => "Boronia")
-        FactoryGirl.create(:address, :address1 => "21 Robina CRT", :zipcode => "3764", :city => "Kilmore")
-        FactoryGirl.create(:address, :address1 => "25 Kendall Street", :zipcode => "3134", :city => "Ringwood")
-        FactoryGirl.create(:address, :address1 => "2 Mines Road", :zipcode => "3135", :city => "Ringwood East")
-        FactoryGirl.create(:address, :address1 => "183 Millers Road", :zipcode => "3025", :city => "Altona North")
-        FactoryGirl.create(:address, :address1 => "310 Pascoe Vale Road", :zipcode => "3040", :city => "Essendon")
-        FactoryGirl.create(:address, :address1 => "6 Martin Street", :zipcode => "3160", :city => "Belgrave")
+        FactoryGirl.create(:address, :address1 => "Thôn Đồng Liêu, Nghĩa Hưng", :zipcode => "426673", :city => "Nam Định")
+        FactoryGirl.create(:address, :address1 => "Xóm 13, Nghĩa Phú", :zipcode => "426783", :city => "Nam Định")
+        FactoryGirl.create(:address, :address1 => "Đội 9, Nghĩa Hồng", :zipcode => "426690", :city => "Nam Định")
+        FactoryGirl.create(:address, :address1 => "Thôn Phú Giáo, Nghĩa Hải", :zipcode => "426971", :city => "Nam Định")
+        FactoryGirl.create(:address, :address1 => "Khu Đông Bình, Rạng Đông", :zipcode => "426931", :city => "Nam Định")
+        FactoryGirl.create(:address, :address1 => "Thạnh Lộc, Thạnh Hòa, Châu Thành", :zipcode => "923061", :city => "Kiên Giang")
+        FactoryGirl.create(:address, :address1 => "Thôn 4, Thạch Thành", :zipcode => "447354", :city => "Thanh Hóa")
+        FactoryGirl.create(:address, :address1 => "Thôn Sài Thị, Khoái Châu", :zipcode => "162721", :city => "Hưng Yên")
+        FactoryGirl.create(:address, :address1 => "Thôn Đồng La, Yên Mỹ", :zipcode => "162967", :city => "Hưng Yên")
       end
 
       # -- Enterprises
       unless Enterprise.count > 1
         puts "[#{task_name}] Seeding enterprises"
 
-        3.times { FactoryGirl.create(:supplier_enterprise, :address => Spree::Address.find_by_zipcode("3160")) }
+        # FactoryGirl.create(:supplier_enterprise, :address => Spree::Address.find_by_zipcode("426673"))
 
-        FactoryGirl.create(:distributor_enterprise, :name => "Green Grass", :address => Spree::Address.find_by_zipcode("3153"))
-        FactoryGirl.create(:distributor_enterprise, :name => "AusFarmers United", :address => Spree::Address.find_by_zipcode("3156"))
-        FactoryGirl.create(:distributor_enterprise, :name => "Blackburn FreeGrossers", :address => Spree::Address.find_by_zipcode("3130"))
-        FactoryGirl.create(:distributor_enterprise, :name => "MegaFoods", :address => Spree::Address.find_by_zipcode("3195"))
-        FactoryGirl.create(:distributor_enterprise, :name => "Eco Butchers", :address => Spree::Address.find_by_zipcode("3018"))
-        FactoryGirl.create(:distributor_enterprise, :name => "Western Wines", :address => Spree::Address.find_by_zipcode("3106"))
-        FactoryGirl.create(:distributor_enterprise, :name => "QuickFresh", :address => Spree::Address.find_by_zipcode("3155"))
-        FactoryGirl.create(:distributor_enterprise, :name => "Fooderers", :address => Spree::Address.find_by_zipcode("3764"))
-        FactoryGirl.create(:distributor_enterprise, :name => "Food Local", :address => Spree::Address.find_by_zipcode("3134"))
-        FactoryGirl.create(:distributor_enterprise, :name => "Green Food Trading Corporation", :address => Spree::Address.find_by_zipcode("3135"))
-        FactoryGirl.create(:distributor_enterprise, :name => "Better Food", :address => Spree::Address.find_by_zipcode("3025"))
-        FactoryGirl.create(:distributor_enterprise, :name => "Gippsland Poultry", :address => Spree::Address.find_by_zipcode("3040"))
+        FactoryGirl.create(:distributor_enterprise, :name => "Vườn Rau Cô Lan", :address => Spree::Address.find_by_zipcode("426783"))
+        FactoryGirl.create(:distributor_enterprise, :name => "Vườn Rau Bà Hồng", :address => Spree::Address.find_by_zipcode("426690"))
+        FactoryGirl.create(:distributor_enterprise, :name => "Thôn Phú Giáo", :address => Spree::Address.find_by_zipcode("426971"))
+        FactoryGirl.create(:distributor_enterprise, :name => "Khu Đông Bình", :address => Spree::Address.find_by_zipcode("426931"))
+        FactoryGirl.create(:distributor_enterprise, :name => "Thạnh Lộc", :address => Spree::Address.find_by_zipcode("923061"))
+        FactoryGirl.create(:distributor_enterprise, :name => "Thôn 4, Thạch Thành", :address => Spree::Address.find_by_zipcode("447354"))
+        FactoryGirl.create(:distributor_enterprise, :name => "Thôn Sài Thị", :address => Spree::Address.find_by_zipcode("162721"))
+        FactoryGirl.create(:distributor_enterprise, :name => "Thôn Đồng La", :address => Spree::Address.find_by_zipcode("162967"))
       end
 
       # -- Enterprise users
-      unless Spree::User.count > 1 
+      unless Spree::User.count > 1
         puts "[#{task_name}] Seeding enterprise users"
 
-        pw = "spree123"
+        pw = "12345678"
 
-        u = FactoryGirl.create(:user, email: "sup@example.com", password: pw, password_confirmation: pw)
+        u = FactoryGirl.create(:user, email: "phanbt@gmail.com", password: pw, password_confirmation: pw)
         u.enterprises << Enterprise.is_primary_producer.first
         u.enterprises << Enterprise.is_primary_producer.second
         puts "  Supplier User created:    #{u.email}/#{pw}  (" + u.enterprise_roles.map{ |er| er.enterprise.name}.join(", ") + ")"
 
-        u = FactoryGirl.create(:user, email: "dist@example.com", password: pw, password_confirmation: pw)
+        u = FactoryGirl.create(:user, email: "hanhtt@gmail.com", password: pw, password_confirmation: pw)
         u.enterprises << Enterprise.is_distributor.first
         u.enterprises << Enterprise.is_distributor.second
         puts "  Distributor User created: #{u.email}/#{pw} (" + u.enterprise_roles.map{ |er| er.enterprise.name}.join(", ") + ")"
@@ -106,7 +98,7 @@ namespace :openfoodnetwork do
         prod1 = FactoryGirl.create(:product,
                            :name => 'Garlic', :price => 20.00,
                            :supplier => Enterprise.is_primary_producer[0],
-                           :taxons => [Spree::Taxon.find_by_name('Vegetables')])
+                           :taxons => [Spree::Taxon.find_by_name('Rau củ')])
 
         ProductDistribution.create(:product => prod1,
                                    :distributor => Enterprise.is_distributor[0],
@@ -116,7 +108,7 @@ namespace :openfoodnetwork do
         prod2 = FactoryGirl.create(:product,
                            :name => 'Fuji Apple', :price => 5.00,
                            :supplier => Enterprise.is_primary_producer[1],
-                           :taxons => [Spree::Taxon.find_by_name('Fruit')])
+                           :taxons => [Spree::Taxon.find_by_name('Rau củ')])
 
         ProductDistribution.create(:product => prod2,
                                    :distributor => Enterprise.is_distributor[1],
@@ -125,48 +117,11 @@ namespace :openfoodnetwork do
         prod3 = FactoryGirl.create(:product,
                            :name => 'Beef - 5kg Trays', :price => 50.00,
                            :supplier => Enterprise.is_primary_producer[2],
-                           :taxons => [Spree::Taxon.find_by_name('Meat and Fish')])
+                           :taxons => [Spree::Taxon.find_by_name('Rau củ')])
 
         ProductDistribution.create(:product => prod3,
                                    :distributor => Enterprise.is_distributor[2],
                                    :enterprise_fee => Enterprise.is_distributor[2].enterprise_fees.first)
-
-        prod4 = FactoryGirl.create(:product,
-                                   :name => 'Carrots', :price => 3.00,
-                                   :supplier => Enterprise.is_primary_producer[2],
-                                   :taxons => [Spree::Taxon.find_by_name('Meat and Fish')])
-
-        ProductDistribution.create(:product => prod4,
-                                   :distributor => Enterprise.is_distributor[2],
-                                   :enterprise_fee => Enterprise.is_distributor[2].enterprise_fees.first)
-
-        prod5 = FactoryGirl.create(:product,
-                                   :name => 'Potatoes', :price => 2.00,
-                                   :supplier => Enterprise.is_primary_producer[2],
-                                   :taxons => [Spree::Taxon.find_by_name('Meat and Fish')])
-
-        ProductDistribution.create(:product => prod5,
-                                   :distributor => Enterprise.is_distributor[2],
-                                   :enterprise_fee => Enterprise.is_distributor[2].enterprise_fees.first)
-
-        prod6 = FactoryGirl.create(:product,
-                                   :name => 'Tomatoes', :price => 2.00,
-                                   :supplier => Enterprise.is_primary_producer[2],
-                                   :taxons => [Spree::Taxon.find_by_name('Meat and Fish')])
-
-        ProductDistribution.create(:product => prod6,
-                                   :distributor => Enterprise.is_distributor[2],
-                                   :enterprise_fee => Enterprise.is_distributor[2].enterprise_fees.first)
-
-        prod7 = FactoryGirl.create(:product,
-                                   :name => 'Potatoes', :price => 2.00,
-                                   :supplier => Enterprise.is_primary_producer[2],
-                                   :taxons => [Spree::Taxon.find_by_name('Meat and Fish')])
-
-        ProductDistribution.create(:product => prod7,
-                                   :distributor => Enterprise.is_distributor[2],
-                                   :enterprise_fee => Enterprise.is_distributor[2].enterprise_fees.first)
-
       end
     end
   end

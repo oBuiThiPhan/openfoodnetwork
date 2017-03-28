@@ -1,14 +1,15 @@
 angular.module("admin.products").factory "VariantUnitManager", ->
   class VariantUnitManager
     @unitNames:
-      'weight':
+      'trọng lượng':
         1.0: 'g'
         1000.0: 'kg'
-        1000000.0: 'T'
-      'volume':
-        0.001: 'mL'
-        1.0: 'L'
-        1000.0: 'kL'
+        10000.0: 'Yến'
+        1000000.0: 'Tấn'
+      'thể tích':
+        0.001: 'ml'
+        1.0: 'l'
+        1000.0: 'Khối'
 
     @variantUnitOptions: ->
       options = for unit_type, scale_with_name of @unitNames
@@ -16,7 +17,7 @@ angular.module("admin.products").factory "VariantUnitManager", ->
         for scale in @unitScales(unit_type)
           name = @getUnitName(scale, unit_type)
           ["#{unit_type_cap} (#{name})", "#{unit_type}_#{scale}"]
-      options.push [['Items', 'items']]
+      options.push [['Quả', 'Quả'], ['Mớ', 'mớ']]
       [].concat options...
 
     @getScale: (value, unitType) ->

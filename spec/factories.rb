@@ -126,7 +126,7 @@ FactoryGirl.define do
 
   factory :enterprise, :class => Enterprise do
     owner { FactoryGirl.create :user }
-    sequence(:name) { |n| "Enterprise #{n}" }
+    name "Enterprise"
     sells 'any'
     description 'enterprise'
     long_description '<p>Hello, world!</p><p>This is a paragraph.</p>'
@@ -351,8 +351,8 @@ FactoryGirl.modify do
   end
 
   factory :address do
-    state { Spree::State.find_by_name 'Victoria' }
-    country { Spree::Country.find_by_name 'Australia' || Spree::Country.first }
+    state { Spree::State.find_by_name 'Nam Định' }
+    country { Spree::Country.find_by_name 'Viet Nam' || Spree::Country.first }
   end
 
   factory :payment do

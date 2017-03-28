@@ -49,8 +49,8 @@ class Admin::ProductImportController < Spree::Admin::BaseController
     extension = '.' + upload.original_filename.split('.').last
     directory = 'tmp/product_import'
     Dir.mkdir(directory) unless File.exists?(directory)
-    File.open(Rails.root.join(directory, filename+extension), 'wb') do |f|
-      f.write(upload.read)
+    File.open(Rails.root.join(directory, filename+extension), 'wb:UTF-8') do |f|
+      f.write(upload.read.encode("UTF-8", "ISO-8859-15"))
       f.path
     end
   end

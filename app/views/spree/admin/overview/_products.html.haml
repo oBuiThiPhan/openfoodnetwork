@@ -6,13 +6,13 @@
       %a.three.columns.omega.icon-plus.button.blue{ href: "#{new_admin_product_path}" }
         = t "spree_admin_enterprises_create_new"
     - else
-      %a{ "ofn-with-tip" => "The products that you sell through the Open Food Network." }
+      %a{ "ofn-with-tip" => "Các sản phẩm mà bạn bán trên Open Food Network." }
         = t "admin.whats_this"
   %div.seven.columns.alpha.list
     - if @product_count > 0
       %div.seven.columns.alpha.list-item
         %span.six.columns.alpha
-          = "You have #{@product_count} active product#{@product_count > 1 ? "s" : ""}."
+          = "Có tất cả #{@product_count} sản phẩm đang hoạt động."
         %span.one.column.omega
           %span.icon-ok-sign
       %a.seven.columns.alpha.button.bottom.blue{ href: "#{bulk_edit_admin_products_path}" }

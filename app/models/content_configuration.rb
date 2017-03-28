@@ -45,11 +45,11 @@ class ContentConfiguration < Spree::Preferences::FileConfiguration
   preference :footer_email, :string, default: "hello@openfoodnetwork.org"
   preference :community_forum_url, :string, default: "http://community.openfoodnetwork.org"
   preference :footer_links_md, :text, default: <<-EOS
-[Newsletter sign-up](/)
+[Đăng ký nhận bản tin](/)
 
-[News](/)
+[Tin tức](/)
 
-[Calendar](/)
+[Lịch](/)
 EOS
 
   preference :footer_about_url, :string, default: "http://www.openfoodnetwork.org/ofn-local/open-food-network-australia/"
