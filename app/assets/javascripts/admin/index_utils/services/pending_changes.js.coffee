@@ -6,7 +6,7 @@ angular.module("admin.indexUtils").factory "pendingChanges", ($q, resources, Sta
     add: (id, attr, change) =>
       @pendingChanges["#{id}"] = {} unless @pendingChanges.hasOwnProperty("#{id}")
       @pendingChanges["#{id}"]["#{attr}"] = change
-      StatusMessage.display('notice', "You have made #{@changeCount(@pendingChanges)} unsaved changes")
+      StatusMessage.display('notice', "Thay đổi #{@changeCount(@pendingChanges)} chưa được lưu")
 
     removeAll: =>
       @pendingChanges = {}
@@ -21,16 +21,16 @@ angular.module("admin.indexUtils").factory "pendingChanges", ($q, resources, Sta
     submitAll: (form=null) =>
       all = []
       @errors = []
-      StatusMessage.display('progress', "Saving...")
+      StatusMessage.display('progress', "Đang lưu...")
       for id, objectChanges of @pendingChanges
         for attrName, change of objectChanges
           all.push @submit(change)
       $q.all(all).then =>
         if @errors.length == 0
-          StatusMessage.display('success', "All changes saved successfully")
+          StatusMessage.display('success', "Tất cả thay đổi đã được lưu")
           form.$setPristine() if form?
         else
-          StatusMessage.display('failure', "Oh no! I was unable to save your changes")
+          StatusMessage.display('failure', "Ồ không! Thay đổi của bạn không thể lưu!")
       all
 
     submit: (change) ->

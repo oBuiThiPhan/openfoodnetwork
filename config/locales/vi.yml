@@ -286,8 +286,8 @@ vi:
         add: Thêm
         hide: Ẩn
         select_a_shop: Chọn một cửa hàng
-        review_now: Xem ngay
         new_products_alert_message: Có %{new_product_count} sản phẩm mới có sẵn để thêm vào kho của bạn.
+        review_now: Bình luận ngay bây giờ
         currently_empty: Kho của bạn hiện đang trống
         no_matching_products: Không tìm thấy sản phẩm phù hợp nào trong hàng tồn kho của bạn
         no_hidden_products: Không có sản phẩm nào bị ẩn khỏi hàng tồn kho này
@@ -320,6 +320,9 @@ vi:
         order_error: "Một số lỗi phải được giải quyết trước khi bạn có thể cập nhật đơn hàng.\nCác lĩnh vực có đường viền màu đỏ chứa lỗi."
         variants_without_unit_value: "CẢNH BÁO: Một số biến thể không có giá trị đơn vị "
 
+    order_cycles:
+      edit:
+        choose_products_from: "Chọn sản phẩm từ: "
     enterprise:
       select_outgoing_oc_products_from: Chọn các sản phẩm đi OC từ
 
@@ -505,7 +508,7 @@ vi:
         connect_ofn: Kết nối thông qua OFN
         always_free: LUÔN LUÔN MIỄN PHÍ
         producer_description_text: Thêm sản phẩm của bạn vào Open Food Network, cho phép các trung tâm cung cấp các sản phẩm của bạn trong các cửa hàng của họ.
-        producer_description_text2:
+        producer_description_text2: ""
         producer_shop: Cửa hàng của nhà sản xuất
         sell_your_produce: Bán sản phẩm của riêng bạn
         sell_description_text: Bán sản phẩm của bạn trực tiếp cho khách hàng thông qua Open Food Network của riêng bạn
@@ -884,7 +887,7 @@ Xem %{link} để tìm hiểu thêm về các tính năng của %{sitename}'s v�
   producer_mail_signoff: "Cảm ơn và gửi lời chúc tốt nhất"
 
   shopping_oc_closed: Đơn đặt hàng đã đóng
-  shopping_oc_closed_description: "Vui lòng chờ cho đến khi chu kỳ tiếp theo mở ra (hoặc liên hệ trực tiếp với chúng tôi để xem liệu chúng tôi có thể chấp nhận bất kỳ yêu cầus muộn nào)"
+  shopping_oc_closed_description: "Vui lòng chờ cho đến khi chu kỳ tiếp theo mở ra (hoặc liên hệ trực tiếp với chúng tôi để xem liệu chúng tôi có thể chấp nhận bất kỳ yêu cầu muộn nào)"
   shopping_oc_last_closed: "Chu kỳ cuối cùng đã đóng %{distance_of_time} trước"
   shopping_oc_next_open: "Chu kỳ tiếp theo sẽ mở trong %{distance_of_time}"
   shopping_tabs_about: "Giới thiệu về %{distributor}"

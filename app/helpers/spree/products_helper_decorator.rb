@@ -18,9 +18,10 @@ module Spree
 
 
     def product_variant_unit_options
-      [['Weight', 'weight'],
-       ['Volume', 'volume'],
-       ['Items', 'items']]
+      [['Trọng lượng', 'trọng lượng'],
+        ['Thể tích', 'thể tích'],
+        ['Quả', 'quả'],
+        ['Mớ', 'mớ']]
     end
   end
 end
