@@ -33,5 +33,5 @@
     %span.required *
   .four.columns
     = af.collection_select :state_id, af.object.country.states, :id, :name, {}, :class => "select2 fullwidth"
-  .four.columns.omega
+  .four.columns.omega{style: "margin-left: 180px;margin-top: 10px;"}
     = af.collection_select :country_id, available_countries, :id, :name, {}, :class => "select2 fullwidth"

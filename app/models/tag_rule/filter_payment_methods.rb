@@ -5,7 +5,7 @@ class TagRule::FilterPaymentMethods < TagRule
   attr_accessible :preferred_matched_payment_methods_visibility, :preferred_payment_method_tags
 
   def tags_match?(payment_method)
-    payment_method_tags = payment_method.andand.tag_list || []
+    payment_method_tags = payment_method.andand.try(:tag_list) || []
     preferred_tags = preferred_payment_method_tags.split(",")
     ( payment_method_tags & preferred_tags ).any?
   end

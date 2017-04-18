@@ -1,3 +1,4 @@
+# encoding: utf-8
 module ActionController
   class Base
     def respond_with(*resources, &block)
@@ -6,7 +7,6 @@ module ActionController
 
       if collector = retrieve_collector_from_mimes(&block)
         options = resources.size == 1 ? {} : resources.extract_options!
-
         # Fix spree issues #3531 and #2210 (patch provided by leiyangyou)
         if defined_response = collector.response and !(Spree::BaseController.spree_responders[self.class.to_s.to_sym].try(:[], action_name.to_sym))
           if action = options.delete(:action)

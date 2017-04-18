@@ -264,7 +264,7 @@ Spree::Product.class_eval do
   def sanitize_permalink
     if permalink.blank? || permalink_changed?
       requested = permalink.presence || permalink_was.presence || name.presence || 'product'
-      self.permalink = create_unique_permalink(requested.parameterize)
+      self.permalink = create_unique_permalink(requested.to_url)
     end
   end
 end

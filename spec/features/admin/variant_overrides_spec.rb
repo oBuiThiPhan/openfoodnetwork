@@ -110,7 +110,7 @@ feature %q{
 
             # Show/Hide products
             first("div#columns-dropdown", :text => "COLUMNS").click
-            first("div#columns-dropdown div.menu div.menu_item", text: "Hide").click
+            first("div#columns-dropdown div.menu div.menu_item", text: "Ẩn").click
             first("div#columns-dropdown", :text => "COLUMNS").click
             expect(page).to have_selector "tr#v_#{variant.id}"
             expect(page).to have_selector "tr#v_#{variant_related.id}"

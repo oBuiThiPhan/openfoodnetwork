@@ -20,31 +20,31 @@ Spree::Admin::ReportsController.class_eval do
 
   REPORT_TYPES = {
     orders_and_fulfillment: [
-      ['Order Cycle Supplier Totals',:order_cycle_supplier_totals],
-      ['Order Cycle Supplier Totals by Distributor',:order_cycle_supplier_totals_by_distributor],
-      ['Order Cycle Distributor Totals by Supplier',:order_cycle_distributor_totals_by_supplier],
-      ['Order Cycle Customer Totals',:order_cycle_customer_totals]
+      ['Tổng chu kỳ đặt hàng nhà cung cấp',:order_cycle_supplier_totals],
+      ['Tổng chu kỳ đặt hàng nhà cung cấp theo nhà phân phối',:order_cycle_supplier_totals_by_distributor],
+      ['Tổng chu kỳ đặt hàng theo nhà cung cấp',:order_cycle_distributor_totals_by_supplier],
+      ['Tổng chu kỳ đặt hàng khách hàng',:order_cycle_customer_totals]
     ],
     products_and_inventory: [
-      ['All products', :all_products],
-      ['Inventory (on hand)', :inventory],
+      ['Tất cả sản phẩm', :all_products],
+      ['Hàng tồn kho (Có hạn)', :inventory],
       ['LettuceShare', :lettuce_share]
     ],
     customers: [
-      ["Mailing List", :mailing_list],
-      ["Addresses", :addresses]
+      ["Danh sách gửi thư", :mailing_list],
+      ["Địa chỉ", :addresses]
     ],
     order_cycle_management: [
-      ["Payment Methods Report", :payment_methods],
-      ["Delivery Report", :delivery]
+      ["Báo cáo phương thức thanh toán", :payment_methods],
+      ["Báo cáo giao hàng", :delivery]
     ],
     sales_tax: [
-      ["Tax Types", :tax_types],
-      ["Tax Rates", :tax_rates]
+      ["Loại thuế", :tax_types],
+      ["Thuế suất", :tax_rates]
     ],
     packing: [
-      ["Pack By Customer", :pack_by_customer],
-      ["Pack By Supplier", :pack_by_supplier]
+      ["Gói gheo khách hàng", :pack_by_customer],
+      ["Gói theo nhà cung cấp", :pack_by_supplier]
     ]
   }
 
@@ -316,18 +316,18 @@ Spree::Admin::ReportsController.class_eval do
 
   def authorized_reports
     reports = {
-      :orders_and_distributors => {:name => "Orders And Distributors", :description => "Orders with distributor details"},
-      :bulk_coop => {:name => "Bulk Co-Op", :description => "Reports for Bulk Co-Op orders"},
-      :payments => {:name => "Payment Reports", :description => "Reports for Payments"},
-      :orders_and_fulfillment => {:name => "Orders & Fulfillment Reports", :description => ''},
-      :customers => {:name => "Customers", :description => 'Customer details'},
-      :products_and_inventory => {:name => "Products & Inventory", :description => ''},
-      :sales_total => { :name => "Sales Total", :description => "Sales Total For All Orders" },
-      :users_and_enterprises => { :name => "Users & Enterprises", :description => "Enterprise Ownership & Status" },
-      :order_cycle_management => {:name => "Order Cycle Management", :description => ''},
-      :sales_tax => { :name => "Sales Tax", :description => "Sales Tax For Orders" },
-      :xero_invoices => { :name => "Xero Invoices", :description => 'Invoices for import into Xero' },
-      :packing => { :name => "Packing Reports", :description => '' }
+      :orders_and_distributors => {:name => "Đơn đặt hàng và nhà phân phối", :description => "Đơn đặt hàng với chi tiết nhà phân phối"},
+      :bulk_coop => {:name => "Hợp tác xã", :description => "Báo cáo cho các đơn hàng của hợp tác xã"},
+      :payments => {:name => "Báo cáo thanh toán", :description => "Báo cáo thanh toán"},
+      :orders_and_fulfillment => {:name => "Đơn đặt hàng & Báo cáo hoàn thiện", :description => ''},
+      :customers => {:name => "Khách hàng", :description => 'Chi tiết khách hàng'},
+      :products_and_inventory => {:name => "Sản phẩm & Hàng tồn kho", :description => ''},
+      :sales_total => { :name => "Tổng doanh thu", :description => "Tổng doanh số cho tất cả đơn đặt hàng" },
+      :users_and_enterprises => { :name => "Người dùng & doanh nghiệp", :description => "Quyền sở hữu và trạng thái doanh nghiệp" },
+      :order_cycle_management => {:name => "Quản lý chu kỳ đặt hàng ", :description => ''},
+      :sales_tax => { :name => "Thuế doanh thu", :description => "Thuế doanh thu cho đơn đặt hàng" },
+      :xero_invoices => { :name => "Kế toán hóa đơn", :description => 'Hóa đơn để nhập vào kế toán' },
+      :packing => { :name => "Gói báo cáo", :description => '' }
     }
     # Return only reports the user is authorized to view.
     reports.select { |action| can? action, :report }

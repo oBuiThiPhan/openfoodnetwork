@@ -52,7 +52,7 @@ module OpenFoodNetwork
       end
 
       def tag_list
-        @variant_override.andand.tag_list || []
+        @variant_override.andand.try(:tag_list) || []
       end
     end
   end

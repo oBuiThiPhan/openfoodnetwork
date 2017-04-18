@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'spree/core/controller_helpers/respond_with_decorator'
 
 Spree::Admin::BaseController.class_eval do
@@ -51,13 +52,13 @@ Spree::Admin::BaseController.class_eval do
     distributor_names = distributors.map(&:name).join ', '
 
     if distributors.count > 1
-      "The hubs #{distributor_names} are listed in an active order cycle, " +
-        "but do not have valid shipping and payment methods. " +
-        "Until you set these up, customers will not be able to shop at these hubs."
+      "Các trung tâm #{distributor_names} được liệt kê trong một chu kỳ đặt hàng đang hoạt động, " +
+        "nhưng không có phương thức vận chuyển và thanh toán hợp lệ. " +
+        "Cho đến khi bạn thiết lập các dịch vụ này, khách hàng sẽ không thể mua sắm tại các trung tâm này."
     else
       "The hub #{distributor_names} is listed in an active order cycle, " +
-        "but does not have valid shipping and payment methods. " +
-        "Until you set these up, customers will not be able to shop at this hub."
+        "Nhưng không có phương thức vận chuyển và thanh toán hợp lệ. " +
+        "Cho đến khi bạn thiết lập các dịch vụ này, khách hàng sẽ không thể mua sắm tại trung tâm này."
     end
   end
 
@@ -84,7 +85,7 @@ Spree::Admin::BaseController.class_eval do
       name = controller_name.classify
       "Api::Admin::#{prefix}#{name}Serializer".constantize
     else
-      raise "Suffix '#{ams_prefix}' not found in ams_prefix_whitelist for #{self.class.name}."
+      raise "Hậu tố '#{ams_prefix}' không được tìm thấy trong ams_prefix_whitelist cho #{self.class.name}."
     end
   end
 end

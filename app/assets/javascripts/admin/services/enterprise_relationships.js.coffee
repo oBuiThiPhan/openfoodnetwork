@@ -2,10 +2,10 @@ angular.module("ofn.admin").factory 'EnterpriseRelationships', ($http, enterpris
   new class EnterpriseRelationships
     create_errors: ""
     all_permissions: [
-      'add_to_order_cycle'
-      'manage_products'
-      'edit_profile'
-      'create_variant_overrides'
+      'Thêm vào chu kỳ đặt hàng'
+      'Quản lý sản phẩm'
+      'Chỉnh sửa hồ sơ'
+      'Thêm sản phẩm vào kho'
     ]
 
     constructor: ->
@@ -26,7 +26,7 @@ angular.module("ofn.admin").factory 'EnterpriseRelationships', ($http, enterpris
 
     permission_presentation: (permission) ->
       switch permission
-        when "add_to_order_cycle" then "add to order cycle"
-        when "manage_products" then "manage products"
-        when "edit_profile" then "edit profile"
-        when "create_variant_overrides" then "add products to inventory"
+        when "Thêm vào chu kỳ đặt hàng" then "Thêm vào chu kỳ đặt hàng"
+        when "Quản lý sản phẩm" then "Quản lý sản phẩm"
+        when "Chỉnh sửa hồ sơ" then "Chỉnh sửa hồ sơ"
+        when "Thêm sản phẩm vào kho" then "Thêm sản phẩm vào kho"

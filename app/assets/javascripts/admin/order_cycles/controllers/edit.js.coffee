@@ -87,11 +87,11 @@ angular.module('admin.orderCycles')
 
     $scope.submit = (destination) ->
       $event.preventDefault()
-      StatusMessage.display 'progress', "Saving..."
+      StatusMessage.display 'progress', "Đang lưu..."
 
     $scope.submit = ($event, destination) ->
       $event.preventDefault()
-      StatusMessage.display 'progress', "Saving..."
+      StatusMessage.display 'progress', "Đang lưu..."
       OrderCycle.update(destination, $scope.order_cycle_form)
 
     $scope.cancel = (destination) ->

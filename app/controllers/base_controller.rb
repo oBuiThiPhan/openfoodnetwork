@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'spree/core/controller_helpers/respond_with_decorator'
 require 'open_food_network/tag_rule_applicator'
 
@@ -31,7 +32,7 @@ class BaseController < ApplicationController
     @order_cycles = OrderCycle.with_distributor(@distributor).active
     .order(@distributor.preferred_shopfront_order_cycle_order)
 
-    applicator = OpenFoodNetwork::TagRuleApplicator.new(@distributor, "FilterOrderCycles", current_customer.andand.tag_list)
+    applicator = OpenFoodNetwork::TagRuleApplicator.new(@distributor, "FilterOrderCycles", current_customer.andand.try(:tag_list))
     applicator.filter!(@order_cycles)
 
     # And default to the only order cycle if there's only the one

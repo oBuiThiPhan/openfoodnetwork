@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'open_food_network/referer_parser'
 
 class ApplicationController < ActionController::Base

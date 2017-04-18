@@ -8,7 +8,7 @@ gem 'i18n', '~> 0.6.11'
 # Patched version. See http://rubysec.com/advisories/CVE-2015-5312/.
 gem 'nokogiri', '>= 1.6.7.1'
 
-gem "mysql2", '~> 0.3.10'
+gem 'pg'
 gem 'spree', github: 'openfoodfoundation/spree', branch: 'spree-upgrade-step1c'
 gem 'spree_i18n', github: 'spree/spree_i18n', branch: '1-3-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '1-3-stable'
@@ -57,6 +57,7 @@ gem 'blockenspiel'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'paper_trail', '~> 3.0.8'
 gem 'diffy'
+gem "stringex"
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
@@ -65,6 +66,7 @@ gem 'foreigner'
 gem 'immigrant'
 
 gem 'whenever', require: false
+gem "roo", "~> 2.7.0"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -89,7 +91,7 @@ gem 'foundation_rails_helper', github: 'willrjmarshall/foundation_rails_helper',
 gem 'jquery-rails'
 gem 'jquery-migrate-rails'
 gem 'css_splitter'
-
+gem 'ofn-qz', github: 'openfoodfoundation/ofn-qz'
 
 group :test, :development do
   # Pretty printed test output
@@ -129,3 +131,5 @@ group :development do
   gem 'guard-rspec'
   gem 'parallel_tests'
 end
+
+gem 'rails_12factor', group: :production

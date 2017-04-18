@@ -92,37 +92,37 @@ namespace :openfoodnetwork do
       end
 
       # -- Products
-      unless Spree::Product.count > 0
-        puts "[#{task_name}] Seeding products"
+      # unless Spree::Product.count > 0
+      #   puts "[#{task_name}] Seeding products"
 
-        prod1 = FactoryGirl.create(:product,
-                           :name => 'Garlic', :price => 20.00,
-                           :supplier => Enterprise.is_primary_producer[0],
-                           :taxons => [Spree::Taxon.find_by_name('Rau củ')])
+      #   prod1 = FactoryGirl.create(:product,
+      #                      :name => 'Garlic', :price => 20.00,
+      #                      :supplier => Enterprise.is_primary_producer[0],
+      #                      :taxons => [Spree::Taxon.find_by_name('Rau củ')])
 
-        ProductDistribution.create(:product => prod1,
-                                   :distributor => Enterprise.is_distributor[0],
-                                   :enterprise_fee => Enterprise.is_distributor[0].enterprise_fees.first)
+      #   ProductDistribution.create(:product => prod1,
+      #                              :distributor => Enterprise.is_distributor[0],
+      #                              :enterprise_fee => Enterprise.is_distributor[0].enterprise_fees.first)
 
 
-        prod2 = FactoryGirl.create(:product,
-                           :name => 'Fuji Apple', :price => 5.00,
-                           :supplier => Enterprise.is_primary_producer[1],
-                           :taxons => [Spree::Taxon.find_by_name('Rau củ')])
+      #   prod2 = FactoryGirl.create(:product,
+      #                      :name => 'Fuji Apple', :price => 5.00,
+      #                      :supplier => Enterprise.is_primary_producer[1],
+      #                      :taxons => [Spree::Taxon.find_by_name('Rau củ')])
 
-        ProductDistribution.create(:product => prod2,
-                                   :distributor => Enterprise.is_distributor[1],
-                                   :enterprise_fee => Enterprise.is_distributor[1].enterprise_fees.first)
+      #   ProductDistribution.create(:product => prod2,
+      #                              :distributor => Enterprise.is_distributor[1],
+      #                              :enterprise_fee => Enterprise.is_distributor[1].enterprise_fees.first)
 
-        prod3 = FactoryGirl.create(:product,
-                           :name => 'Beef - 5kg Trays', :price => 50.00,
-                           :supplier => Enterprise.is_primary_producer[2],
-                           :taxons => [Spree::Taxon.find_by_name('Rau củ')])
+      #   prod3 = FactoryGirl.create(:product,
+      #                      :name => 'Beef - 5kg Trays', :price => 50.00,
+      #                      :supplier => Enterprise.is_primary_producer[2],
+      #                      :taxons => [Spree::Taxon.find_by_name('Rau củ')])
 
-        ProductDistribution.create(:product => prod3,
-                                   :distributor => Enterprise.is_distributor[2],
-                                   :enterprise_fee => Enterprise.is_distributor[2].enterprise_fees.first)
-      end
+      #   ProductDistribution.create(:product => prod3,
+      #                              :distributor => Enterprise.is_distributor[2],
+      #                              :enterprise_fee => Enterprise.is_distributor[2].enterprise_fees.first)
+      # end
     end
   end
 end

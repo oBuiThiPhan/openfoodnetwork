@@ -15,7 +15,7 @@ Spree::Variant.class_eval do
   has_many :variant_overrides
   has_many :inventory_items
 
-  attr_accessible :unit_value, :unit_description, :images_attributes, :display_as, :display_name
+  attr_accessible :unit_value, :unit_description, :images_attributes, :display_as, :display_name, :tag_list
   accepts_nested_attributes_for :images
 
   validates_presence_of :unit_value,

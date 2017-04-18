@@ -64,7 +64,7 @@ module Admin
             # Only update apply exchange information if it is actually submmitted
             OpenFoodNetwork::OrderCycleFormApplicator.new(@order_cycle, spree_current_user).go!
           end
-          flash[:notice] = 'Your order cycle has been updated.' if params[:reloading] == '1'
+          flash[:notice] = 'Chu kỳ đặt hàng của bạn đã được cập nhật.' if params[:reloading] == '1'
           format.html { redirect_to main_app.edit_admin_order_cycle_path(@order_cycle) }
           format.json { render :json => {:success => true}  }
         else
@@ -76,7 +76,7 @@ module Admin
     def bulk_update
       @order_cycle_set = params[:order_cycle_set] && OrderCycleSet.new(params[:order_cycle_set])
       if @order_cycle_set.andand.save
-        redirect_to main_app.admin_order_cycles_path, :notice => 'Order cycles have been updated.'
+        redirect_to main_app.admin_order_cycles_path, :notice => 'Chu kỳ đặt hàng đã được cập nhật.'
       else
         render :index
       end

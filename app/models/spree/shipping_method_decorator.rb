@@ -8,7 +8,7 @@ Spree::ShippingMethod.class_eval do
   attr_accessible :distributor_ids, :description
   attr_accessible :require_ship_address, :tag_list
 
-  validates :distributors, presence: { message: "^At least one hub must be selected" }
+  validates :distributors, presence: { message: "^Phải chọn ít nhất một trung tâm" }
 
   scope :managed_by, lambda { |user|
     if user.has_spree_role?('admin')
@@ -62,7 +62,7 @@ Spree::ShippingMethod.class_eval do
   end
 
   def adjustment_label
-    'Shipping'
+    'Giao hàng'
   end
 
   private

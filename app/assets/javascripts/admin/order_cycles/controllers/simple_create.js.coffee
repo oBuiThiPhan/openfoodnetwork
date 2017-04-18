@@ -49,7 +49,7 @@ angular.module('admin.orderCycles').controller "AdminSimpleCreateOrderCycleCtrl"
 
   $scope.submit = ($event, destination) ->
     $event.preventDefault()
-    StatusMessage.display 'progress', "Saving..."
+    StatusMessage.display 'progress', "Đang lưu..."
     OrderCycle.mirrorIncomingToOutgoingProducts()
     OrderCycle.create(destination)
 

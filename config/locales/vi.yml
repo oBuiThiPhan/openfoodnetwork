@@ -286,8 +286,8 @@ vi:
         add: Thêm
         hide: Ẩn
         select_a_shop: Chọn một cửa hàng
+        review_now: Xem ngay
         new_products_alert_message: Có %{new_product_count} sản phẩm mới có sẵn để thêm vào kho của bạn.
-        review_now: Bình luận ngay bây giờ
         currently_empty: Kho của bạn hiện đang trống
         no_matching_products: Không tìm thấy sản phẩm phù hợp nào trong hàng tồn kho của bạn
         no_hidden_products: Không có sản phẩm nào bị ẩn khỏi hàng tồn kho này
@@ -682,7 +682,7 @@ vi:
   checkout: "Thanh toán"
   cart_updating: "Đang cập nhật giỏ hàng..."
   cart_empty: "Giỏ hàng trống"
-  cart_edit: "Chỉnh sửa giỏ hàng của bạn"
+  cart_edit: "Chỉnh sửa giỏ hàng"
 
   card_number: Số thẻ
   card_securitycode: "Mã bảo mật"
@@ -785,7 +785,7 @@ vi:
   checkout_send: Đặt hàng ngay
   checkout_your_order: Đơn đặt hàng của bạn
   checkout_cart_total: Tổng số giỏ hàng
-  checkout_shipping_price: Đang chuyển hàng
+  checkout_shipping_price: Phí giao hàng
   checkout_total_price: Tổng
   checkout_back_to_cart: "Trở lại giỏ hàng"
 
@@ -934,7 +934,7 @@ Xem %{link} để tìm hiểu thêm về các tính năng của %{sitename}'s v�
   products_update_error_data: "Lưu thất bại do dữ liệu không hợp lệ:"
   products_changes_saved: "Đã lưu thay đổi."
 
-  search_no_results_html: "Xin lỗi, không tìm thấy kết quả nào cho %{query}. Thử tìm kiếm khác?"
+  search_no_results_html: "Xin lỗi, không tìm thấy kết quả nào. Thử tìm kiếm khác?"
 
   components_profiles_popover: "Hồ sơ không có mặt hàng trên Open Food Network, nhưng có thể có cửa hàng vật chất hoặc trực tuyến của họ ở nơi khác"
   components_profiles_show: "Hiển thị hồ sơ"
@@ -1288,7 +1288,7 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   outstanding_balance: "Số dư chưa thanh toán"
   admin_entreprise_relationships: "Mối quan hệ doanh nghiệp"
   admin_entreprise_relationships_everything: "Mọi điều"
-  admin_entreprise_relationships_permits: "Giấy phép"
+  admin_entreprise_relationships_permits: "Cho phép"
   admin_entreprise_relationships_seach_placeholder: "Tìm kiếm"
   admin_entreprise_relationships_button_create: "Tạo mới"
   admin_entreprise_groups: "Nhóm doanh nghiệp"
@@ -1477,7 +1477,7 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   properties: "Tính chất"
   shipping_methods: "Hình thức vận chuyển"
   payment_methods: "Phương thức thanh toán"
-  payment_method_fee: "Phí giao dịch"
+  payment_method_fee: "Phí thanh toán"
   enterprise_fees: "Phí doanh nghiệp"
   inventory_settings: "Hàng tồn kho"
   tag_rules: "Quy tắc thẻ"
@@ -1601,6 +1601,7 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   state_based: Dựa vào thành phố
   back_to_zones_list: Trở lại
   back_to_countries_list: Trở lại
+  back_to_taxonomies_list: Trở lại
 
   listing_countries: Quốc gia
   iso_name: Tên ISO
@@ -1715,6 +1716,20 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   bulk_order_management: Quản lý đơn hàng số lượng lớn
   out_of_stock: Hết hàng
   choose_a_customer: Chọn một khách hàng
+  spree_products: Sản phẩm của spree
+  unsaved_changes: "Các thay đổi của bạn chưa được lưu lại"
+  taxonomy_edit: Chỉnh sửa
+  taxonomy_tree_instruction: ""
+  tree: Cây phân loại
+  provider_settings: Thiết lập nhà cung cấp
+  login: Đăng nhập
+  signature: Chữ ký
+  solution: Giải pháp
+  landing_page: Trang đích
+  logourl: Logo URL
+  test_mode: Chế độ kiểm tra
+  not_found: Không tìm thấy doanh nghiệp
+  order_delivery_time: Thời gian giao hàng
 
 
 
@@ -1722,7 +1737,12 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   delete: Xóa
   add: Thêm
   capture: Thu thập
+  clone: clone
 
+
+  paypal:
+    flash:
+      generic_error:
 
   actions:
     create: "Tạo"

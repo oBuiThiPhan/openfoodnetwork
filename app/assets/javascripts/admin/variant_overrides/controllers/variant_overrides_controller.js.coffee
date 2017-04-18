@@ -15,9 +15,10 @@ angular.module("admin.variantOverrides").controller "AdminVariantOverridesCtrl",
   $scope.currentView = -> Views.currentView
 
   $scope.views = Views.setViews
-    inventory:    { name: "Inventory Products", visible: true }
-    hidden:       { name: "Hidden Products",    visible: false }
-    new:          { name: "New Products",       visible: false }
+    inventory:    { name: "Sản phẩm tồn kho", visible: true }
+    hidden:       { name: "Sản phẩm đã ẩn",    visible: false }
+    new:          { name: "Sản phẩm mới
+",       visible: false }
 
   $scope.bulkActions = [ name: "Reset Stock Levels To Defaults", callback: 'resetStock' ]
 
@@ -53,15 +54,15 @@ angular.module("admin.variantOverrides").controller "AdminVariantOverridesCtrl",
   $scope.displayDirty = ->
     if DirtyVariantOverrides.count() > 0
       num = if DirtyVariantOverrides.count() == 1 then "one override" else "#{DirtyVariantOverrides.count()} overrides"
-      StatusMessage.display 'notice', "Changes to #{num} remain unsaved."
+      StatusMessage.display 'notice', "Còn #{num} sản phẩm chưa được lưu lại."
     else
       StatusMessage.clear()
 
   $scope.update = ->
     if DirtyVariantOverrides.count() == 0
-      StatusMessage.display 'alert', 'No changes to save.'
+      StatusMessage.display 'alert', 'Không có thay đổi để lưu.'
     else
-      StatusMessage.display 'progress', 'Saving...'
+      StatusMessage.display 'progress', 'Đang lưu...'
       DirtyVariantOverrides.save()
       .success (updatedVos) ->
         DirtyVariantOverrides.clear()

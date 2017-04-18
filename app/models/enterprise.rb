@@ -337,7 +337,7 @@ class Enterprise < ActiveRecord::Base
   end
 
   def self.find_available_permalink(test_permalink)
-    test_permalink = test_permalink.parameterize
+    test_permalink = test_permalink.to_url
     test_permalink = "my-enterprise" if test_permalink.blank?
     existing = Enterprise.select(:permalink).order(:permalink).where("permalink LIKE ?", "#{test_permalink}%").map(&:permalink)
     unless existing.include?(test_permalink)
@@ -378,7 +378,7 @@ class Enterprise < ActiveRecord::Base
     dups = dups.where('id != ?', id) unless new_record?
 
     if dups.any?
-      errors.add :name, "has already been taken. If this is your enterprise and you would like to claim ownership, please contact the current manager of this profile at #{dups.first.owner.email}."
+      errors.add :name, "đã được thực hiện. Nếu đây là doanh nghiệp của bạn và bạn muốn xác nhận quyền sở hữu, vui lòng liên hệ với người quản lý hiện tại của hồ sơ này tại #{dups.first.owner.email}."
     end
   end
 
@@ -427,7 +427,7 @@ class Enterprise < ActiveRecord::Base
 
   def enforce_ownership_limit
     unless owner.can_own_more_enterprises?
-      errors.add(:owner, "^#{owner.email} is not permitted to own any more enterprises (limit is #{owner.enterprise_limit}).")
+      errors.add(:owner, "^#{owner.email} không được phép sở hữu bất kỳ doanh nghiệp hơn (Tối đa là #{owner.enterprise_limit}).")
     end
   end
 
@@ -461,7 +461,7 @@ class Enterprise < ActiveRecord::Base
 
   def shopfront_taxons
     unless preferred_shopfront_taxon_order =~ /\A((\d+,)*\d+)?\z/
-      errors.add(:shopfront_category_ordering, "must contain a list of taxons.")
+      errors.add(:shopfront_category_ordering, "phải chứa một danh sách đơn vị.")
     end
   end
 

@@ -165,13 +165,13 @@ angular.module('admin.orderCycles').factory 'OrderCycle', ($resource, $window, S
           if destination?
             $window.location = destination
           else
-            StatusMessage.display 'success', 'Your order cycle has been updated.'
+            StatusMessage.display 'success', 'Chu kỳ đặt hàng của bạn đã được cập nhật.'
         else
           console.log('Failed to update order cycle')
 
     confirmNoDistributors: ->
       if @order_cycle.outgoing_exchanges.length == 0
-        confirm 'There are no distributors in this order cycle. This order cycle will not be visible to customers until you add one. Would you like to continue saving this order cycle?'
+        confirm 'Không có nhà phân phối nào trong chu kỳ đặt hàng này. Chu trình đặt hàng này sẽ không hiển thị cho khách hàng. Bạn có muốn tiếp tục lưu chu kỳ đặt hàng này không?'
       else
         true
 
