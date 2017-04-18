@@ -15,9 +15,10 @@ angular.module("admin.variantOverrides").controller "AdminVariantOverridesCtrl",
   $scope.currentView = -> Views.currentView
 
   $scope.views = Views.setViews
-    inventory:    { name: "Inventory Products", visible: true }
-    hidden:       { name: "Hidden Products",    visible: false }
-    new:          { name: "New Products",       visible: false }
+    inventory:    { name: "Sản phẩm tồn kho", visible: true }
+    hidden:       { name: "Sản phẩm đã ẩn",    visible: false }
+    new:          { name: "Sản phẩm mới
+",       visible: false }
 
   $scope.bulkActions = [ name: "Reset Stock Levels To Defaults", callback: 'resetStock' ]
 

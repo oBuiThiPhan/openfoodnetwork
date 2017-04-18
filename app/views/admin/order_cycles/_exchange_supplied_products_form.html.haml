@@ -3,7 +3,7 @@
   .exchange-select-all-variants
     %label
       = check_box_tag 'order_cycle_incoming_exchange_{{ $parent.$index }}_select_all_variants', 1, 1, 'ng-model' => 'exchange.select_all_variants', 'ng-change' => 'setExchangeVariants(exchange, suppliedVariants(exchange.enterprise_id), exchange.select_all_variants)', 'id' => 'order_cycle_incoming_exchange_{{ $parent.$index }}_select_all_variants'
-      Select all
+      Chọn tất cả
 
   .exchange-products
     -# No need to scope product list based on permissions, because if an incoming exchange is visible,

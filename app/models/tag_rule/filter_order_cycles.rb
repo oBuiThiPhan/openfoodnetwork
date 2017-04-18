@@ -5,7 +5,7 @@ class TagRule::FilterOrderCycles < TagRule
   attr_accessible :preferred_matched_order_cycles_visibility, :preferred_exchange_tags
 
   def tags_match?(order_cycle)
-    exchange_tags = exchange_for(order_cycle).andand.tag_list || []
+    exchange_tags = exchange_for(order_cycle).andand.try(:tag_list) || []
     preferred_tags = preferred_exchange_tags.split(",")
     ( exchange_tags & preferred_tags ).any?
   end

@@ -57,7 +57,7 @@
       %div{'ofn-with-tip' => t('.permalink_tip', link: spree.root_url)}
         %a= t('admin.whats_this')
     .six.columns
-      = f.text_field :permalink, { 'ng-model' => "Enterprise.permalink", placeholder: "eg. your-shop-name", 'ng-model-options' => "{ updateOn: 'default blur', debounce: {'default': 300, 'blur': 0} }" }
+      = f.text_field :permalink, { 'ng-model' => "Enterprise.permalink", placeholder: "vd. bui-thi-phan", 'ng-model-options' => "{ updateOn: 'default blur', debounce: {'default': 300, 'blur': 0} }" }
     .two.columns.omega
       %img.spinner{ src: "/assets/loading.gif", width: "30px", ng: { show: "checking" } }
       %span{ ng: { class: 'availability.toLowerCase()', hide: "checking" } }

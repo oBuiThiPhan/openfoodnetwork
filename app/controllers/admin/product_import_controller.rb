@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'roo'
 
 class Admin::ProductImportController < Spree::Admin::BaseController

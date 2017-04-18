@@ -55,6 +55,6 @@ class ShopController < BaseController
 
   def applicator
     return @applicator unless @applicator.nil?
-    @applicator = OpenFoodNetwork::TagRuleApplicator.new(current_distributor, "FilterProducts", current_customer.andand.tag_list)
+    @applicator = OpenFoodNetwork::TagRuleApplicator.new(current_distributor, "FilterProducts", current_customer.andand.try(:tag_list))
   end
 end

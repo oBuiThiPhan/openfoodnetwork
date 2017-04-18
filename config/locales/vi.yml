@@ -286,8 +286,8 @@ vi:
         add: Thêm
         hide: Ẩn
         select_a_shop: Chọn một cửa hàng
+        review_now: Xem ngay
         new_products_alert_message: Có %{new_product_count} sản phẩm mới có sẵn để thêm vào kho của bạn.
-        review_now: Bình luận ngay bây giờ
         currently_empty: Kho của bạn hiện đang trống
         no_matching_products: Không tìm thấy sản phẩm phù hợp nào trong hàng tồn kho của bạn
         no_hidden_products: Không có sản phẩm nào bị ẩn khỏi hàng tồn kho này

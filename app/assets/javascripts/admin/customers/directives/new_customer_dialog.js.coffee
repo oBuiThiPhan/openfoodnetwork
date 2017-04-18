@@ -35,4 +35,4 @@ angular.module("admin.customers").directive 'newCustomerDialog', ($compile, $tem
       if CurrentShop.shop.id
         template.dialog('open')
       else
-        alert('Please select a shop first')
+        alert('Vui lòng chọn một cửa hàng')

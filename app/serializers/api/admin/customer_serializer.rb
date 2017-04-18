@@ -5,7 +5,7 @@ class Api::Admin::CustomerSerializer < ActiveModel::Serializer
   has_one :bill_address, serializer: Api::AddressSerializer
 
   def tag_list
-    object.tag_list.join(",")
+    object.tag_list.join(",") if object.tag_list
   end
 
   def name
@@ -16,6 +16,6 @@ class Api::Admin::CustomerSerializer < ActiveModel::Serializer
     object.tag_list.map do |tag|
       tag_rule_map = options[:tag_rule_mapping].andand[tag]
       tag_rule_map || { text: tag, rules: nil }
-    end
+    end if object.tag_list
   end
 end

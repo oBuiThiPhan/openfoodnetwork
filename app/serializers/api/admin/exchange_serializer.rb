@@ -9,6 +9,14 @@ class Api::Admin::ExchangeSerializer < ActiveModel::Serializer
     Hash[ object.variants.merge(variants).map { |v| [v.id, true] } ]
   end
 
+  def tag_list
+    object.tag_list.join(",") if object.tag_list
+  end
+
+  def tags
+    object.tag_list.map{ |t| { text: t } } if object.tag_list
+  end
+
   private
 
   def visible_incoming_variants
@@ -35,13 +43,5 @@ class Api::Admin::ExchangeSerializer < ActiveModel::Serializer
   def permitted_outgoing_variants
     OpenFoodNetwork::OrderCyclePermissions.new(options[:current_user], object.order_cycle)
     .visible_variants_for_outgoing_exchanges_to(object.receiver)
-  end
-
-  def tag_list
-    object.tag_list.join(",")
-  end
-
-  def tags
-    object.tag_list.map{ |t| { text: t } }
   end
 end

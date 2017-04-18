@@ -126,7 +126,7 @@ Spree::OrdersController.class_eval do
       distributor = Enterprise.is_distributor.find params[:order][:distributor_id]
       @order.set_distributor! distributor
 
-      flash[:notice] = 'Your hub has been selected.'
+      flash[:notice] = 'Trung tâm của bạn đã được chọn.'
       redirect_to request.referer
 
     elsif params[:commit] == 'Choose Order Cycle'
@@ -134,7 +134,7 @@ Spree::OrdersController.class_eval do
       order_cycle = OrderCycle.active.find params[:order][:order_cycle_id]
       @order.set_order_cycle! order_cycle
 
-      flash[:notice] = 'Your order cycle has been selected.'
+      flash[:notice] = 'Chu kỳ đặt hàng của bạn đã được chọn.'
       redirect_to request.referer
     end
   end

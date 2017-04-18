@@ -12,7 +12,7 @@ module EnterprisesHelper
     return [] unless current_distributor.present?
     shipping_methods = current_distributor.shipping_methods
 
-    applicator = OpenFoodNetwork::TagRuleApplicator.new(current_distributor, "FilterShippingMethods", current_customer.andand.tag_list)
+    applicator = OpenFoodNetwork::TagRuleApplicator.new(current_distributor, "FilterShippingMethods", current_customer.andand.try(:tag_list))
     applicator.filter!(shipping_methods)
 
     shipping_methods.uniq
@@ -22,7 +22,7 @@ module EnterprisesHelper
     return [] unless current_distributor.present?
     payment_methods = current_distributor.payment_methods.available(:front_end).all
 
-    applicator = OpenFoodNetwork::TagRuleApplicator.new(current_distributor, "FilterPaymentMethods", current_customer.andand.tag_list)
+    applicator = OpenFoodNetwork::TagRuleApplicator.new(current_distributor, "FilterPaymentMethods", current_customer.andand.try(:tag_list))
     applicator.filter!(payment_methods)
 
     payment_methods
@@ -50,7 +50,7 @@ module EnterprisesHelper
     if enterprise.sells == 'none'
       enterprise.producer_profile_only ? 'Profile' : 'Supplier Only'
     else
-      "Has Shopfront"
+      "Có cửa hàng"
     end
   end
 

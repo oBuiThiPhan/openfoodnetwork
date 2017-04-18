@@ -18,11 +18,11 @@ class VariantOverrideSet < ModelSet
   def collection_to_delete
     # Override of ModelSet method to allow us to check presence of a tag_list (which is not an attribute)
     deleted = []
-    collection.delete_if { |e| deleted << e if @delete_if.andand.call(e.attributes, e.tag_list) }
+    collection.delete_if { |e| deleted << e if @delete_if.andand.call(e.attributes, e.try(:tag_list)) }
     deleted
   end
 
   def collection_to_keep
-    collection.reject { |e| @delete_if.andand.call(e.attributes, e.tag_list) }
+    collection.reject { |e| @delete_if.andand.call(e.attributes, e.try(:tag_list)) }
   end
 end

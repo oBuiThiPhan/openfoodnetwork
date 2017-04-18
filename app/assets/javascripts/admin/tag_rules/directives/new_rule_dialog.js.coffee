@@ -8,11 +8,11 @@ angular.module("admin.tagRules").directive 'newTagRuleDialog', ($compile, $templ
     template = $compile($templateCache.get('admin/new_tag_rule_dialog.html'))(scope)
 
     scope.ruleTypes = [
-      # { id: "DiscountOrder", name: 'Apply a discount to orders' }
-      { id: "FilterProducts", name: 'Show or Hide variants in my shopfront' }
-      { id: "FilterShippingMethods", name: 'Show or Hide shipping methods at checkout' }
-      { id: "FilterPaymentMethods", name: 'Show or Hide payment methods at checkout' }
-      { id: "FilterOrderCycles", name: 'Show or Hide order cycles in my shopfront' }
+      # { id: "DiscountOrder", name: 'Áp dụng giảm giá cho đơn đặt hàng' }
+      { id: "FilterProducts", name: 'SHiển thị hoặc ẩn các biến thể trên giao diện cửa hàng' }
+      { id: "FilterShippingMethods", name: 'Hiển thị hoặc ẩn các phương thức vận chuyển khi thanh toán' }
+      { id: "FilterPaymentMethods", name: 'Hiển thị hoặc ẩn các phương thức thanh toán khi thanh toán' }
+      { id: "FilterOrderCycles", name: 'Hiển thị hoặc ẩn chu kỳ đặt hàng trên giao diện cửa hàng' }
     ]
 
     scope.ruleType = scope.ruleTypes[0].id

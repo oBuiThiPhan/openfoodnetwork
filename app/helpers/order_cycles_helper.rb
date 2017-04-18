@@ -86,14 +86,14 @@ module OrderCyclesHelper
       disabled_message = nil
       if options[:shipping_and_payment_methods] && (e.shipping_methods.empty? || e.payment_methods.available.empty?)
         if e.shipping_methods.empty? && e.payment_methods.available.empty?
-          disabled_message = 'no shipping or payment methods'
+          disabled_message = 'không có phương thức giao hàng hoặc thanh toán'
         elsif e.shipping_methods.empty?
-          disabled_message = 'no shipping methods'
+          disabled_message = 'không có phương thức giao hàng'
         elsif e.payment_methods.available.empty?
-          disabled_message = 'no payment methods'
+          disabled_message = 'không có phương thức thanh toán'
         end
       elsif options[:confirmed] && !e.confirmed?
-        disabled_message = 'unconfirmed'
+        disabled_message = 'Chưa được xác nhận'
       end
 
       if disabled_message

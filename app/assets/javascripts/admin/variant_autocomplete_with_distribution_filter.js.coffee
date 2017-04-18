@@ -11,7 +11,7 @@ $.fn.variantAutocomplete = ->
   if Spree.routes
     @parent().children(".options_placeholder").attr "id", @parent().data("index")
     @select2
-      placeholder: "Select a variant"
+      placeholder: "Chọn một biến thể"
       minimumInputLength: 3
       ajax:
         url: Spree.routes.variants_search
