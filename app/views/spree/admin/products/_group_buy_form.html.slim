@@ -1,0 +1,14 @@
+= f.field_container :group_buy do
+  = f.label :group_buy, 'Tham gia Group Buy?'
+  br
+  .alpha.two.columns
+    = f.radio_button :group_buy, '1', :checked => f.object.group_buy
+    = f.label :group_buy_1, 'Có'
+  .alpha.two.columns
+    = f.radio_button :group_buy, '0', :checked => !f.object.group_buy
+    = f.label :group_buy_0, 'Không'
+br.clear
+= f.field_container :group_buy_unit_size do
+  = f.label :group_buy_unit_size, "Kích thước đơn vị"
+  br
+  = f.text_field :group_buy_unit_size

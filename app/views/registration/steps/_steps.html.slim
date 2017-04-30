@@ -1,0 +1,16 @@
+script  type: "text/ng-template", id: "registration/steps.html"  
+  .row#progress-bar
+    .small-12.medium-2.columns.item  ng: { repeat: 'step in steps', class: "{active: (currentStep() == step),'show-for-medium-up': (currentStep() != step)}" }  
+      span ng-switch="step" 
+        span ng-switch-when="details" 
+          | {{ $index+1 + ". " + "Thông tin" }}
+        span ng-switch-when="contact" 
+          | {{ $index+1 + ". " + "Liên hệ" }}
+        span ng-switch-when="type" 
+          | {{ $index+1 + ". " + "Thể loại" }}
+        span ng-switch-when="about" 
+          | {{ $index+1 + ". " + "Giới thiệu" }}
+        span ng-switch-when="images" 
+          | {{ $index+1 + ". " + "Hình ảnh" }}
+        span ng-switch-when="social" 
+          | {{ $index+1 + ". " + "Mạng xã hội" }}

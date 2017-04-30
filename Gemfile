@@ -30,7 +30,9 @@ gem 'unicorn'
 gem 'angularjs-rails', '1.5.5'
 gem 'bugsnag'
 gem 'newrelic_rpm'
-gem 'haml'
+# gem 'haml'
+gem "slim-rails"
+gem "haml2slim"
 gem 'sass', "~> 3.3"
 gem 'sass-rails', '~> 3.2.3', groups: [:default, :assets]
 gem 'redcarpet'
