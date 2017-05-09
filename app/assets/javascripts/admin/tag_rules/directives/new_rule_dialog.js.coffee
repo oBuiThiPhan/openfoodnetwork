@@ -9,7 +9,7 @@ angular.module("admin.tagRules").directive 'newTagRuleDialog', ($compile, $templ
 
     scope.ruleTypes = [
       # { id: "DiscountOrder", name: 'Áp dụng giảm giá cho đơn đặt hàng' }
-      { id: "FilterProducts", name: 'SHiển thị hoặc ẩn các biến thể trên giao diện cửa hàng' }
+      { id: "FilterProducts", name: 'Hiển thị hoặc ẩn mặt hàng trên giao diện cửa hàng' }
       { id: "FilterShippingMethods", name: 'Hiển thị hoặc ẩn các phương thức vận chuyển khi thanh toán' }
       { id: "FilterPaymentMethods", name: 'Hiển thị hoặc ẩn các phương thức thanh toán khi thanh toán' }
       { id: "FilterOrderCycles", name: 'Hiển thị hoặc ẩn chu kỳ đặt hàng trên giao diện cửa hàng' }

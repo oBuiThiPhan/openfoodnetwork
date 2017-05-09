@@ -81,14 +81,14 @@
     $scope.refreshData();
     $scope.$watch('bulk_order_form.$dirty', function(newVal, oldVal) {
       if (newVal === true) {
-        return StatusMessage.display('notice', "You have unsaved changes");
+        return StatusMessage.display('notice', "Bạn có các thay đổi chưa lưu");
       }
     });
     $scope.submit = function() {
       if ($scope.bulk_order_form.$valid) {
-        StatusMessage.display('progress', "Saving...");
+        StatusMessage.display('progress', "Đang lưu...");
         return $q.all(LineItems.saveAll()).then(function() {
-          StatusMessage.display('success', "All changes saved");
+          StatusMessage.display('success', "Đã lưu tất cả thay đổi");
           return $scope.bulk_order_form.$setPristine();
         })["catch"](function() {
           return StatusMessage.display('failure', t("unsaved_changes_error"));

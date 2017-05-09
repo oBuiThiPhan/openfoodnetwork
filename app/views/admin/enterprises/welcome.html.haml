@@ -1,13 +1,16 @@
 #welcome_page.sixteen.columns.alpha
   %header
-    %h1= t('.welcome_title')
-    %p
+    %h1{style: "color: black;"}
+      = t('.welcome_title')
+    %p{style: "color: black;"}
       = t('.welcome_text')
-      %strong
-        = "#{"producer " if @enterprise.is_primary_producer}profile"
+      %strong{style: "color: black;"}
+        = "#{"Hồ sơ nhà sản xuất " if @enterprise.is_primary_producer}"
 
-    %section
-      %h2= t('.next_step')
-      %p= t('.choose_starting_point')
+    %section{style: "margin-top: 20px;"}
+      %h2{style: "color: black;"}
+        = t('.next_step')
+      %p{style: "color: black;"}
+        = t('.choose_starting_point')
 
   = render partial: "change_type_form"

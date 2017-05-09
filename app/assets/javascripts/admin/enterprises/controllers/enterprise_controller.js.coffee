@@ -11,7 +11,7 @@ angular.module("admin.enterprises")
     $scope.StatusMessage = StatusMessage
 
     $scope.$watch 'enterprise_form.$dirty', (newValue) ->
-      StatusMessage.display 'notice', t('admin.unsaved_changes') if newValue
+      StatusMessage.display 'notice', 'Các thay đổi của bạn chưa được lưu lại' if newValue
 
     $scope.setFormDirty = ->
       $scope.$apply ->

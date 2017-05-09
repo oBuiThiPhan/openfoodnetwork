@@ -395,8 +395,8 @@ vi:
           logo: Logo
           promo_image_placeholder: 'Hình này được hiển thị trong "Giới thiệu"'
           promo_image_note1: 'XIN LƯU Ý:'
-          promo_image_note2: Mọi hình ảnh quảng cáo được tải lên ở đây sẽ được cắt thành 1200 x 260.
-          promo_image_note3: Hình ảnh quảng cáo được hiển thị ở đầu trang hồ sơ của doanh nghiệp và cửa sổ bật lên.
+          promo_image_note2: Mọi hình ảnh bìa được tải lên ở đây sẽ được cắt thành 1200 x 260.
+          promo_image_note3: Hình ảnh bìa được hiển thị ở đầu trang hồ sơ của doanh nghiệp và cửa sổ bật lên.
         inventory_settings:
           text1: Bạn có thể lựa chọn để quản lý mức giá và mức giá cổ phiếu qua
           inventory: hàng tồn kho
@@ -431,7 +431,7 @@ vi:
           visible_in_search_tip: Xác định liệu doanh nghiệp này sẽ được hiển thị cho khách hàng khi tìm kiếm trang web.
           visible: Công khai
           not_visible: Không thể thấy
-          permalink: Liên kết (không có dấu cách)
+          permalink: permalink (duy nhất, không cách)
           permalink_tip: "Liên kết này được sử dụng để tạo url cho cửa hàng của bạn: %{link} tên-cửa-hàng/shop"
           link_to_front: Liên kết đến giao diện cửa hàng
           link_to_front_tip: Một liên kết trực tiếp đến cửa hàng của bạn trên Open Food Network.
@@ -576,7 +576,7 @@ vi:
       row:
         suppliers: Nhà cung cấp
         distributors: Nhà phân phối
-        variants: variants
+        variants: mặt hàng
       simple_form:
         ready_for: Sẵn sàng cho
         ready_for_placeholder: Ngày/Giờ
@@ -733,10 +733,10 @@ vi:
 
   home_shop: Mua hàng
 
-  brandstory_headline: "Thực phẩm, bắt đầu."
-  brandstory_intro: "Đôi khi cách tốt nhất để sửa chữa một hệ thống là bắt đầu một cái mới…"
-  brandstory_part1: "Chúng tôi bắt đầu từ nông nghiệp. Với nông dân và người trồng trọt, họ đã sẵn sàng đề kể câu chuyện về họ một cách tự hào và chân thực. Với nhà phân phối, họ sẵn sàng kết nối con người với các sản phẩm tốt và sạch nhất. Với người mua hàng, họ tin rằng những quyết định mua sắm hàng tuần có thể thay đổi cả thế giới."
-  brandstory_part2: "Sau đó, chúng tôi cần một giải pháp để biến nó thành sự thực, giải pháp liên kết những người trồng, người bán và người mua thực phẩm. Giải pháp này có thể kể tất cả các câu chuyện của các nông dân và biến các giao dịch thành hành động diễn ra hàng ngày"
+  brandstory_headline: "Thực phẩm, nơi bắt đầu."
+  brandstory_intro: ""
+  brandstory_part1: "Chúng tôi bắt đầu từ nông nghiệp. Với nông dân và người trồng trọt, họ đã sẵn sàng để kể câu chuyện về họ một cách tự hào và chân thực. Với nhà phân phối, họ sẵn sàng kết nối con người với các sản phẩm tốt và sạch nhất. Với người mua hàng, họ tin rằng những quyết định mua sắm hàng tuần có thể thay đổi cả thế giới."
+  brandstory_part2: "Sau đó, chúng tôi cần một giải pháp để biến nó thành sự thực, giải pháp liên kết những người trồng, người bán và người mua thực phẩm. Giải pháp này có thể kể tất cả các câu chuyện của các nông dân và biến các giao dịch thành hành động diễn ra hàng ngày."
   brandstory_part3: "Vì vậy, chúng tôi xây dựng một siêu thị online, tạo ra các mối quan hệ thiết thực. Nó là mã nguồn mở nên mọi người đều có thể sở hữu nó và hệ thống này chia thành các vùng miền và quốc gia nên mọi người có thể tạo các phiên bản trên toàn thế giới."
   brandstory_part4: "Nó hoạt động ở khắp mọi nơi. Nó thay đổi mọi thứ."
   brandstory_part5_strong: "Chúng tôi gọi nó là Open Food Network."
@@ -770,7 +770,7 @@ vi:
   checkout_order_ready: Đơn hàng đã sẵn sàng
   checkout_hide: Ẩn
   checkout_expand: Mở rộng
-  checkout_headline: "Ok, đã sẵn sàng để thanh toán?"
+  checkout_headline: "Bạn đã sẵn sàng để thanh toán?"
   checkout_as_guest: "Thanh toán dưới dạng khách"
   checkout_details: "Thông tin của bạn"
   checkout_billing: "Địa chỉ thanh toán"
@@ -784,7 +784,7 @@ vi:
   checkout_payment: Phương thức thanh toán
   checkout_send: Đặt hàng ngay
   checkout_your_order: Đơn đặt hàng của bạn
-  checkout_cart_total: Tổng số giỏ hàng
+  checkout_cart_total: Tổng số
   checkout_shipping_price: Phí giao hàng
   checkout_total_price: Tổng
   checkout_back_to_cart: "Trở lại giỏ hàng"
@@ -1160,13 +1160,13 @@ Xem %{link} để tìm hiểu thêm về các tính năng của %{sitename}'s v�
   limit_reached_text: "Số doanh nghiệp bạn được phép sở hữu trên"
   limit_reached_text2: "đã đạt đến giới hạn, bạn không thể tạo thêm bất kỳ một doanh nghiệp nào nữa!."
   limit_reached_action: "Quay trở lại trang chủ"
-  select_promo_image: "Bước 3. Chọn hình ảnh khuyến mại"
+  select_promo_image: "Bước 3. Chọn hình ảnh bìa"
   promo_image_tip: "Mẹo: Được hiển thị như một băng rôn, kích thước phù hợp là 1200×260px"
-  promo_image_label: "Chọn hình ảnh quảng cáo"
+  promo_image_label: "Chọn hình ảnh bìa"
   action_or: "Hoặc"
-  promo_image_drag: "Kéo và cắt quảng cáo của bạn ở đây"
-  review_promo_image: "Bước 4. Xem lại ảnh quảng cáo khuyến mại"
-  review_promo_image_tip: "Mẹo: để có kết quả tốt nhất, hình ảnh quảng cáo của bạn nên lấp đầy không gian sẵn có"
+  promo_image_drag: "Kéo và cắt ảnh bìa của bạn ở đây"
+  review_promo_image: "Bước 4. Xem lại ảnh bìa khuyến mại"
+  review_promo_image_tip: "Mẹo: để có kết quả tốt nhất, hình ảnh bìa của bạn nên lấp đầy không gian sẵn có"
   promo_image_placeholder: "Logo của bạn sẽ xuất hiện ở đây để xem trước khi tải lên"
   uploading: "Đang tải lên..."
   select_logo: "Bước 1. Chọn ảnh cho logo"
@@ -1176,9 +1176,9 @@ Xem %{link} để tìm hiểu thêm về các tính năng của %{sitename}'s v�
   review_logo: "Bước 2. Kiểm tra logo của bạn"
   review_logo_tip: "Mẹo: để có kết quả tốt nhất, logo của bạn nên lấp đầy không gian sẵn có"
   logo_placeholder: "Logo của bạn sẽ xuất hiện ở đây để xem trước khi tải lên"
-  enterprise_about_headline: "Nice one!"
+  enterprise_about_headline: "CHÚC MỪNG!"
   enterprise_about_message: "Bây giờ chúng ta hãy xác định chi tiết về"
-  enterprise_success: "Đã thành công! %{enterprise} đã được thêm vào Open Food Network "
+  enterprise_success: "Đã thành lập thành công! %{enterprise} đã được thêm vào Open Food Network. "
   enterprise_registration_exit_message: "Nếu bạn thoát trình hướng dẫn này ở bất kỳ giai đoạn nào, bạn cần nhấp vào liên kết xác nhận trong email bạn đã nhận được. Thao tác này sẽ đưa bạn đến giao diện quản trị viên của bạn nơi bạn có thể tiếp tục thiết lập hồ sơ của mình."
   enterprise_description: "Mô tả ngắn"
   enterprise_description_placeholder: "Một câu mô tả ngắn về doanh nghiệp của bạn"
@@ -1238,17 +1238,17 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   registration_detail_producer: "Woot! Hãy cho chúng tôi biết một chút về trang trại của bạn:"
   registration_detail_name_enterprise: "Tên doanh nghiệp:"
   registration_detail_name_producer: "Tên trang trại:"
-  registration_detail_name_placeholder: "e.g. Charlie's Awesome Farm"
+  registration_detail_name_placeholder: "vd. Thuc pham sach"
   registration_detail_name_error: "Vui lòng chọn một tên duy nhất cho doanh nghiệp của bạn"
   registration_detail_address1: "Địa chỉ 1:"
-  registration_detail_address1_placeholder: "e.g. 123 Cranberry Drive"
+  registration_detail_address1_placeholder: "vd. 123 Kim Nguu"
   registration_detail_address1_error: "Vui lòng nhập một địa chỉ"
   registration_detail_address2: "Địa chỉ 2:"
   registration_detail_suburb: "Quận/huyện:"
-  registration_detail_suburb_placeholder: "e.g. Northcote"
+  registration_detail_suburb_placeholder: "vd. Hai Ba Trung"
   registration_detail_suburb_error: "Vui lòng nhập vùng quận/huyện"
   registration_detail_postcode: "Mã bưu điện:"
-  registration_detail_postcode_placeholder: "e.g. 3070"
+  registration_detail_postcode_placeholder: "vd. 123456"
   registration_detail_postcode_error: "Vui lòng nhập mã bưu điện"
   registration_detail_state: "Thành phố:"
   registration_detail_state_error: "Vui lòng nhập thành phố"
@@ -1518,7 +1518,8 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   new_product: "Tạo Sản Phẩm"
   image: "Hình Ảnh"
   product_description: "Mô tả"
-  shipping_category: ""
+  shipping_category: Loại giao hàng
+  product_category: Loại sản phẩm
   on_demand: "Luôn có hàng"
   on_hand: "Số lượng"
   units: "Đơn vị "
@@ -1620,6 +1621,10 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   price_sack: Giá
   new_taxonomy: Tạo mới
   new_shipping_category: Tạo mới
+  new_variant: Tạo mới
+  add_product_properties: Tạo mới
+  new_image: Tạo mới
+
   back_to_shipping_categories_list: Trở lại
   new_shipping_method: Tạo mới
   show_out_of_stock_products: Hiển thị ra sản phẩm hết hàng
@@ -1652,6 +1657,7 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   back_to_users_list: Trở lại
   back_to_orders_list: Trở lại
   back_to_trackers_list: Trở lại
+  back_to_images_list: Trở lại
   current_promotion_usage:
   google_analytics_id: Phân tích của Google
   there_were_problems_with_the_following_fields: ""
@@ -1730,6 +1736,28 @@ Vui lòng làm theo các hướng dẫn ở đó để doanh nghiệp của bạ
   test_mode: Chế độ kiểm tra
   not_found: Không tìm thấy doanh nghiệp
   order_delivery_time: Thời gian giao hàng
+  promo_image: Ảnh bìa
+  editing_payment_method: Chỉnh sửa
+  editing_product: Chỉnh sửa
+  minimal_amount: Số tiền tối thiểu
+  normal_amount: Số tiền thông thường
+  discount_amount: Số tiền chiết khấu
+  calculator_settings_warning: ""
+  created_successfully: Đã tạo thành công
+  weight: Cân nặng
+  height: Chiều cao
+  width: Chiều rộng
+  depth: Chiều sâu
+  product_details: Chi tiết sản phẩm
+  product_properties: Đặc tính sản phẩm
+  select_from_prototype: Chọn từ nguyên mẫu
+  thumbnail: Hình thu nhỏ
+  all: Tất cả
+  alt_text: Văn bản mô tả
+  filename: Tên ảnh
+  variants: Các biến thể
+  cost_price: Giá thành
+  options: Tùy chọn
 
 
 

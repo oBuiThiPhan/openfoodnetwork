@@ -17,7 +17,7 @@
         icon_class: "icon-pencil"
       }, {
         name: 'images',
-        label: 'Hình ảnh'),
+        label: 'Hình ảnh',
         icon_class: "icon-picture"
       }, {
         name: 'contact',
@@ -25,7 +25,7 @@
         icon_class: "icon-phone"
       }, {
         name: 'web',
-        label: t('admin_entreprise_groups_web'),
+        label: 'Trang web',
         icon_class: "icon-globe"
       }
     ]);

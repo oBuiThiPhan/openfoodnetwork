@@ -12,16 +12,16 @@
         scope.ruleTypes = [
           {
             id: "FilterProducts",
-            name: 'Show or Hide variants in my shopfront'
+            name: 'Hiển thị hoặc ẩn mặt hàng trên giao diện cửa hàng'
           }, {
             id: "FilterShippingMethods",
-            name: 'Show or Hide shipping methods at checkout'
+            name: 'Hiển thị hoặc ẩn các phương thức vận chuyển khi thanh toán'
           }, {
             id: "FilterPaymentMethods",
-            name: 'Show or Hide payment methods at checkout'
+            name: 'Hiển thị hoặc ẩn các phương thức thanh toán khi thanh toán'
           }, {
             id: "FilterOrderCycles",
-            name: 'Show or Hide order cycles in my shopfront'
+            name: 'Hiển thị hoặc ẩn chu kỳ đặt hàng trên giao diện cửa hàng'
           }
         ];
         scope.ruleType = scope.ruleTypes[0].id;

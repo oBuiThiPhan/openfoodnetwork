@@ -1,12 +1,12 @@
 %fieldset.alpha.no-border-bottom{ ng: { show: "menu.selected.name=='primary_details'" } }
   %legend Chi tiết chính
   = f.field_container :name do
-    = f.label :name
+    = f.label :name, t(:name)
     %br/
     = f.text_field :name
 
   = f.field_container :description do
-    = f.label :description
+    = f.label :description, t(:description)
     %br/
     = f.text_field :description
 
@@ -21,6 +21,6 @@
     = f.collection_select :enterprise_ids, @enterprises, :id, :name, {}, {class: "select2 fullwidth", multiple: true}
 
   = f.field_container :permalink do
-    = f.label :permalink, "Permalink (unique, no spaces)"
+    = f.label :permalink, "Permalink (duy nhất, không cách)"
     %br/
     = f.text_field :permalink

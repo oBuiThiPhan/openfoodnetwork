@@ -82,7 +82,7 @@
           %input.button.big{ type: 'submit', value: t(:select_continue), ng: { click: "submit(change_type)" } }
         - else
           - trial_length = Spree::Config[:shop_trial_length_days]
-          %input.button.big{ type: 'submit', value: "Start #{trial_length}-Day Shop Trial", ng: { click: "submit(change_type)", show: "sells=='own' || sells=='any'" } }
+          %input.button.big{ type: 'submit', value: "Bắt đầu #{trial_length}-ngày trải nghiệm", ng: { click: "submit(change_type)", show: "sells=='own' || sells=='any'" } }
           %input.button.big{ type: 'submit', value: t(:select_continue), ng: { click: "submit(change_type)", hide: "sells=='own' || sells=='any'" } }
       - elsif @enterprise.sells == 'unspecified'
         %input.button.big{ type: 'submit', value: t(:select_continue), ng: { click: "submit(change_type)" } }

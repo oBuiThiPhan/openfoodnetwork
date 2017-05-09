@@ -8,7 +8,7 @@ angular.module('admin.orderCycles').controller "AdminSimpleCreateOrderCycleCtrl"
     $scope.enterprise_fees = EnterpriseFee.index(coordinator_id: ocInstance.coordinator_id)
 
   $scope.$watch 'order_cycle_form.$dirty', (newValue) ->
-      StatusMessage.display 'notice', t("admin.unsaved_changes") if newValue
+      StatusMessage.display 'notice', 'Các thay đổi của bạn chưa được lưu lại' if newValue
 
   $scope.$watch 'order_cycle_form.$valid', (isValid) ->
     StatusMessage.setValidation(isValid)

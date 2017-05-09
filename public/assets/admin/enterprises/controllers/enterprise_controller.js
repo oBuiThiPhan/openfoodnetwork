@@ -14,7 +14,7 @@
     $scope.StatusMessage = StatusMessage;
     $scope.$watch('enterprise_form.$dirty', function(newValue) {
       if (newValue) {
-        return StatusMessage.display('notice', t('admin.unsaved_changes'));
+        return StatusMessage.display('notice', 'Các thay đổi của bạn chưa được lưu lại');
       }
     });
     $scope.setFormDirty = function() {
