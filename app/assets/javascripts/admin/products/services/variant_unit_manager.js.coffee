@@ -17,7 +17,7 @@ angular.module("admin.products").factory "VariantUnitManager", ->
         for scale in @unitScales(unit_type)
           name = @getUnitName(scale, unit_type)
           ["#{unit_type_cap} (#{name})", "#{unit_type}_#{scale}"]
-      options.push [['Quả', 'Quả'], ['Mớ', 'mớ']]
+      options.push [['Quả-củ', 'Quả-củ'], ['Mặt hàng', 'mặt hàng']]
       [].concat options...
 
     @getScale: (value, unitType) ->

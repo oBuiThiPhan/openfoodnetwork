@@ -56,7 +56,7 @@ module EnterprisesHelper
 
   def enterprise_confirm_delete_message(enterprise)
     if enterprise.supplied_products.present?
-      "This will also delete the #{pluralize enterprise.supplied_products.count, 'product'} that this enterprise supplies. Are you sure you want to continue?"
+      "Điều này cũng sẽ xóa #{pluralize enterprise.supplied_products.count, 'product'} mà doanh nghiệp này cung cấp. Bạn có chắc chắn muốn tiếp tục?"
     else
       t(:are_you_sure)
     end

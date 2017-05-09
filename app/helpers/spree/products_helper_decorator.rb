@@ -20,8 +20,8 @@ module Spree
     def product_variant_unit_options
       [['Trọng lượng', 'trọng lượng'],
         ['Thể tích', 'thể tích'],
-        ['Quả', 'quả'],
-        ['Mớ', 'mớ']]
+        ['Quả-củ', 'quả-củ'],
+        ['Mặt hàng', 'mặt hàng']]
     end
   end
 end

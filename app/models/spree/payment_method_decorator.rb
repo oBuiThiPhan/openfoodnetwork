@@ -50,7 +50,7 @@ Spree::PaymentMethod.class_eval do
   def self.clean_name
     case name
     when "Spree::PaymentMethod::Check"
-      "Cash/EFT/etc. (payments for which automatic validation is not required)"
+      "Cash/EFT/etc. (Thanh toán mà không yêu cầu xác nhận tự động)"
     when "Spree::Gateway::Migs"
       "MasterCard Internet Gateway Service (MIGS)"
     when "Spree::Gateway::Pin"

@@ -56,7 +56,7 @@ Spree::Admin::BaseController.class_eval do
         "nhưng không có phương thức vận chuyển và thanh toán hợp lệ. " +
         "Cho đến khi bạn thiết lập các dịch vụ này, khách hàng sẽ không thể mua sắm tại các trung tâm này."
     else
-      "The hub #{distributor_names} is listed in an active order cycle, " +
+      "Trung tâm #{distributor_names} được liệt kê trong một chu kỳ đặt hàng đang hoạt động, " +
         "Nhưng không có phương thức vận chuyển và thanh toán hợp lệ. " +
         "Cho đến khi bạn thiết lập các dịch vụ này, khách hàng sẽ không thể mua sắm tại trung tâm này."
     end

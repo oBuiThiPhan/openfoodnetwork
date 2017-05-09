@@ -7,7 +7,7 @@
         dateFormat: 'yy-mm-dd',
         timeFormat: 'HH:mm:ss',
         showOn: "button",
-        buttonImage: "<%= asset_path 'datepicker/cal.gif' %>",
+        buttonImage: "/assets/datepicker/cal.gif",
         buttonImageOnly: true,
         stepMinute: 15,
         onSelect: function(dateText, inst) {

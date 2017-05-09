@@ -11,7 +11,7 @@ angular.module('admin.orderCycles', ['admin.utils', 'admin.indexUtils', 'ngTagsI
       	dateFormat: 'yy-mm-dd'
       	timeFormat: 'HH:mm:ss'
       	showOn: "button"
-      	buttonImage: "<%= asset_path 'datepicker/cal.gif' %>"
+      	buttonImage: "/assets/datepicker/cal.gif"
       	buttonImageOnly: true
       	stepMinute: 15
       	onSelect: (dateText, inst) ->
