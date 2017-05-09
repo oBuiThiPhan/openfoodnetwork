@@ -124,7 +124,7 @@ angular.module("ofn.admin").controller "AdminProductEditCtrl", ($scope, $timeout
       $scope.variantIdCounter
 
     $scope.deleteProduct = (product) ->
-      if confirm("Are you sure?")
+      if confirm(t("are_you_sure"))
         $http(
           method: "DELETE"
           url: "/api/products/" + product.id + "/soft_delete"
@@ -181,7 +181,7 @@ angular.module("ofn.admin").controller "AdminProductEditCtrl", ($scope, $timeout
 
       productsToSubmit = filterSubmitProducts(DirtyProducts.all())
       if productsToSubmit.length > 0
-        $scope.updateProducts productsToSubmit # Don't submit an empty list
+        $scope.updateProducts productsToSubmit # Dont submit an empty list
       else
         StatusMessage.display 'alert', t("products_change")
 

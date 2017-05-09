@@ -31,8 +31,8 @@
     %input{ 'ng-model' => 'product.inherits_properties', :name => 'inherits_properties', 'ofn-track-product' => 'inherits_properties', type: "checkbox" }
   %td.available_on{ 'ng-show' => 'columns.available_on.visible' }
     %input{ 'ng-model' => 'product.available_on', :name => 'available_on', 'ofn-track-product' => 'available_on', 'datetimepicker' => 'product.available_on', type: "text" }
-  / %td.actions
-  /   %a{ 'ng-click' => 'editWarn(product)', :class => "edit-product icon-edit no-text" }
+  %td.actions
+    %a{ 'ng-click' => 'editWarn(product)', :class => "edit-product icon-edit no-text" }
   %td.actions
     %a{ 'ng-click' => 'cloneProduct(product)', :class => "clone-product icon-copy no-text" }
   %td.actions

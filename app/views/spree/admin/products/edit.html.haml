@@ -1,0 +1,89 @@
+- content_for :page_actions do
+  %li= button_link_to t(:back_to_products_list), session[:return_to] || admin_products_url, :icon => 'icon-arrow-left'
+  - if can?(:create, Spree::Product)
+    %li#new_product_link
+      = button_link_to t(:new_product), new_object_url, { :icon => 'icon-plus', :id => 'admin_new_product' }
+= render :partial => 'spree/admin/shared/product_sub_menu'
+= render :partial => 'spree/admin/shared/product_tabs', :locals => { :current => 'Product Details' }
+= render :partial => 'spree/shared/error_messages', :locals => { :target => @product }
+= form_for [:admin, @product], :method => :put, :html => { :multipart => true } do |f|
+  %fieldset.no-border-top
+    %div{"data-hook" => "admin_product_form_fields"}
+      .left.eight.columns.alpha{"data-hook" => "admin_product_form_left"}
+        = f.field_container :name do
+          = f.label :name, raw(t(:name) + content_tag(:span, ' *', :class => 'required'))
+          = f.text_field :name, :class => 'fullwidth title'
+          = f.error_message_on :name
+        = f.field_container :permalink do
+          = f.label :permalink, raw(t(:permalink) + content_tag(:span, ' *',  :class => "required"))
+          = f.text_field :permalink, :class => 'fullwidth title'
+          = f.error_message_on :permalink
+        = f.field_container :description do
+          = f.label :description, t(:description)
+          = f.text_area :description, {:rows => "#{unless @product.has_variants? then '20' else '13' end}", :class => 'fullwidth'}
+          = f.error_message_on :description
+      .right.four.columns.omega{"data-hook" => "admin_product_form_right"}
+        = f.field_container :price do
+          = f.label :price, raw(t(:master_price) + content_tag(:span, ' *', :class => "required"))
+          = f.text_field :price, :value => number_to_currency(@product.price, :unit => '')
+          = f.error_message_on :price
+        .alpha.two.columns
+          = f.field_container :cost_price do
+            = f.label :cost_price, t(:cost_price)
+            = f.text_field :cost_price, :value => number_to_currency(@product.cost_price, :unit => '')
+            = f.error_message_on :cost_price
+        .omega.two.columns
+          = f.field_container :cost_currency do
+            = f.label :cost_currency, t(:cost_currency)
+            = f.text_field :cost_currency
+            = f.error_message_on :cost_currency
+        .clear
+        = f.field_container :available_on do
+          = f.label :available_on, t(:available_on)
+          = f.error_message_on :available_on
+          = f.text_field :available_on, :class => 'datepicker'
+        - unless @product.has_variants?
+          = f.field_container :sku do
+            = f.label :sku, t(:sku)
+            = f.text_field :sku, :size => 16
+          %ul#shipping_specs
+            %li#shipping_specs_weight_field.field.alpha.two.columns
+              = f.label :weight, t(:weight)
+              = f.text_field :weight, :size => 4
+            %li#shipping_specs_height_field.field.omega.two.columns
+              = f.label :height, t(:height)
+              = f.text_field :height, :size => 4
+            %li#shipping_specs_width_field.field.alpha.two.columns
+              = f.label :width, t(:width)
+              = f.text_field :width, :size => 4
+            %li#shipping_specs_depth_field.field.omega.two.columns
+              = f.label :depth, t(:depth)
+              = f.text_field :depth, :size => 4
+        = f.field_container :shipping_categories do
+          = f.label :shipping_category_id, t(:shipping_categories)
+          = f.collection_select(:shipping_category_id, @shipping_categories, :id, :name, { :include_blank => t('match_choices.none') }, { :class => 'select2' })
+          = f.error_message_on :shipping_category
+        = f.field_container :tax_category do
+          = f.label :tax_category_id, t(:tax_category)
+          = f.collection_select(:tax_category_id, @tax_categories, :id, :name, { :include_blank => t('match_choices.none') }, { :class => 'select2' })
+          = f.error_message_on :tax_category
+      .twelve.columns.alpha.omega
+        = f.field_container :taxons do
+          = f.label :taxon_ids, t(:taxons)
+          %br/
+          = f.hidden_field :taxon_ids, :value => @product.taxon_ids.join(',')
+        = f.field_container :option_types do
+          = f.hidden_field :option_type_ids, :value => @product.option_type_ids.join(',')
+      / <h2><haml_loud> t(:metadata) </haml_loud></h2>
+      .alpha.omega.twelve.columns{"data-hook" => "admin_product_form_meta"}
+        = f.field_container :meta_keywords do
+          = f.label :meta_keywords, t(:meta_keywords)
+          = f.text_field :meta_keywords, :class => 'fullwidth'
+        = f.field_container :meta_description do
+          = f.label :meta_description, t(:meta_description)
+          = f.text_field :meta_description, :class => 'fullwidth'
+      .clear
+      %div{"data-hook" => "admin_product_form_additional_fields"}
+      .clear
+
+    = render :partial => 'spree/admin/shared/edit_resource_links'
